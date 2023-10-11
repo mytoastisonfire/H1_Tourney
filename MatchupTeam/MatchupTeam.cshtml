@@ -1,0 +1,33 @@
+﻿@page
+@model TourneyPlaner.Pages.MatchupTeam.MatchupTeamModel
+@{
+}
+<br />
+<h2>List of Matchup Teams</h2>
+<a class='btn btn-primary btn-sm' href='/MatchupTeam/CreateMatchupTeam'>New Matchup Team</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Score</th>
+            <th>TeamID</th>
+            <th>MatchupID</th>
+        </tr>   
+    </thead>
+    <tbody>
+        @foreach (var matchupTeam in Model.matchupTeamList)
+        {
+                <tr>
+                    <td>@matchupTeam.iD</td>
+                    <td>@matchupTeam.score</td>
+                    <td>@matchupTeam.teamId</td>
+                    <td>@matchupTeam.matchupId<td>
+
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/MatchupTeam/Edit?id=@matchupTeam.iD">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/MatchupTeam/Delete?id=@matchupTeam.iD">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
